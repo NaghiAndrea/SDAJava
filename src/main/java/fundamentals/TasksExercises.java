@@ -86,9 +86,34 @@ public class TasksExercises {
             if (divizibil == false) {
                 System.out.print(i + " ");
             }
-
         }
     }
+
+    //Write an application that will take a positive number from the user (type int) and
+    // calculate the Fibonacci number at the indicated index. For example, if the number
+    // equals 5, your program should print the fifth Fibonacci number. In Fibonacci sequence,
+    // each number is the sum of the two preceding ones.
+
+    public static void fibonacci() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Introduceti indexul dorit: ");
+        int num = input.nextInt();
+        int[] myArray = new int[num+1];
+
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.print("Index: " + i + " : ");
+            if (i > 1) {
+                myArray[i] = myArray[i - 1] + myArray[i - 2];
+                System.out.println(myArray[i]);
+            } else {
+                myArray[i] = i;
+                System.out.println(myArray[i]);
+            }
+        }
+            System.out.println("\nNumarul Fibonacci la indexul: " + num + " este " + myArray[num]);
+        }
+
 }
 
 

@@ -37,6 +37,7 @@ public class Main {
 
       //  TasksExercises.bmiCalculator();
     //    TasksExercises.fizzBuzz();
-        TasksExercises.primeNumbers();
+      //  TasksExercises.primeNumbers();
+        TasksExercises.fibonacci();
     }
 }
