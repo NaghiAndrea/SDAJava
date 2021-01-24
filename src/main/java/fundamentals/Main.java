@@ -16,7 +16,7 @@ public class Main {
       //  float pi = 3.14f;
         float pi = (float) Math.PI;
         System.out.println("The perimeter: " + (diameter * pi));
-        */
+
 
          TasksExercises tasksExercises1 = new TasksExercises();
          TasksExercises tasksExercises2 = new TasksExercises();
@@ -32,7 +32,9 @@ public class Main {
 
         //      tasksExercises.circlePerimeter();
 
-        TasksExercises.circlePerimeter(); //se poate face asa pt ca este static
+      //  TasksExercises.circlePerimeter(); //se poate face asa pt ca este static
+      */
 
+TasksExercises.bmiCalculator();
     }
 }
