@@ -35,6 +35,7 @@ public class Main {
       //  TasksExercises.circlePerimeter(); //se poate face asa pt ca este static
       */
 
-TasksExercises.bmiCalculator();
+      //  TasksExercises.bmiCalculator();
+        TasksExercises.fizzBuzz();
     }
 }
