@@ -66,6 +66,29 @@ public class TasksExercises {
         }
     }
 
+    //Write an application that takes a positive number from the user (type int) and prints
+    // all prime numbers greater than 1 and less than the given number.
+
+    public static void primeNumbers() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Introduceti numarul: ");
+        int num = input.nextInt();
+        System.out.println("Numerele prime mai mari decat 1 si mai mici decat " + num + " : ");
+        for (int i = 2; i < num; i++) {
+            boolean divizibil = false;
+
+            for (int k = 2; k <= (i / 2); k++) {
+                if (i % k == 0) {
+                    divizibil = true;
+                }
+            }
+            if (divizibil == false) {
+                System.out.print(i + " ");
+            }
+
+        }
+    }
 }
 
 

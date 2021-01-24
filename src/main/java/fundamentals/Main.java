@@ -36,6 +36,7 @@ public class Main {
       */
 
       //  TasksExercises.bmiCalculator();
-        TasksExercises.fizzBuzz();
+    //    TasksExercises.fizzBuzz();
+        TasksExercises.primeNumbers();
     }
 }
