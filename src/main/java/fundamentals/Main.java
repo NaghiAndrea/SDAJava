@@ -39,6 +39,7 @@ public class Main {
     //    TasksExercises.fizzBuzz();
       //  TasksExercises.primeNumbers();
        // TasksExercises.fibonacci();
-        TasksExercises.numDigitsSum();
+      //  TasksExercises.numDigitsSum();
+        TasksExercises.maxText();
     }
 }

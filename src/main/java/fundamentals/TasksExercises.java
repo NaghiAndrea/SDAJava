@@ -133,6 +133,57 @@ public class TasksExercises {
         System.out.println("Suma cifrelor este: " + sum);
 
     }
+
+    //Write an application that will read texts (variables of the String type) until the user gives the text "Enough!"
+// and then writes the longest of the given texts (not including the text "Enough!"). If the user does
+// not provide any text, write "No text provided".
+
+    public static void maxText() {
+        //Afiseaza primul cuvant dintre cele mai lungi, daca au aceeasi lungime
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Introduceti textul: ");
+        String text = "";
+        StringBuilder textIntreg = new StringBuilder("");
+
+        while (!(text.equals("Enough!"))) {
+            text = input.next();
+            if (!(text.equals("Enough!"))) {
+                textIntreg.append(text);
+                textIntreg.append(" ");
+            }
+        }
+
+        System.out.println("Textul: " + textIntreg);
+
+        StringBuilder cuvant = new StringBuilder("");
+        boolean cuvantNou = false;
+        int charCounter = 0;
+        int max = 0;
+        StringBuilder maxCuvant = new StringBuilder("");
+        for (int i = 0; i < textIntreg.length(); i++) {
+
+            if (textIntreg.charAt(i) != ' ') {
+                cuvant.append(textIntreg.charAt(i));
+                charCounter++;
+            } else cuvantNou = true;
+            if ((cuvantNou == true) || (i == (textIntreg.length() - 1))) {
+                if (charCounter > max) {
+                    max = charCounter;
+                    maxCuvant = cuvant;
+                }
+                charCounter = 0;
+                cuvant = new StringBuilder("");
+                cuvantNou = false;
+            }
+        }
+
+        if (max == 0) System.out.println("Nu a fost introdus text");
+        else
+            System.out.println("Cel mai lung cuvant: " + maxCuvant);
+    }
+
+
 }
 
 
