@@ -114,6 +114,25 @@ public class TasksExercises {
             System.out.println("\nNumarul Fibonacci la indexul: " + num + " este " + myArray[num]);
         }
 
+
+    //Write an application that gets one positive number (type int) from the user and
+    // calculates a sum of digits of the given number.
+    // Hint: to make some operations on every single digit of the number (digit by digit),
+    // you can calculate the remainder of dividing the number by 10
+    // (to get the value of the last digit) and divide the number by 10 (to "move" to the next digit).
+    public static void numDigitsSum() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Introduceti un numar intreg: ");
+        int numar = input.nextInt();
+        int sum = 0;
+        do {
+            sum = sum + numar % 10;
+            numar = numar / 10;
+        } while (numar > 0);
+
+        System.out.println("Suma cifrelor este: " + sum);
+
+    }
 }
 
 
