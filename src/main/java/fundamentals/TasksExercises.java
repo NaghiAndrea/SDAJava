@@ -239,6 +239,24 @@ public class TasksExercises {
             }
         }
     }
+
+    //Write an application that reads a text from the user (type String) and counts
+    // a percentage of occurrences of a space character.
+    public static void spaceOccurencePercentage() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Introduceti textul: ");
+        String text = input.nextLine();
+        int count = 0;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == ' ') count++;
+        }
+        System.out.println("Lungime text: " + text.length());
+        System.out.println("Numarul de aparitii caracter spatiu: " + count);
+        System.out.println("Procentul aparitiei caracterului spatiu: " + (((float)count / (float) text.length()) *100) + "%");
+    }
+
+
 }
 
 

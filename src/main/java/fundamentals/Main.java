@@ -41,6 +41,7 @@ public class Main {
        // TasksExercises.fibonacci();
       //  TasksExercises.numDigitsSum();
       //  TasksExercises.maxText();
-        TasksExercises.maxTextVar2();
+      //  TasksExercises.maxTextVar2();
+        TasksExercises.spaceOccurencePercentage();
     }
 }
