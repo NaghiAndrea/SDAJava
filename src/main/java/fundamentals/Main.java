@@ -35,13 +35,14 @@ public class Main {
       //  TasksExercises.circlePerimeter(); //se poate face asa pt ca este static
       */
 
-      //  TasksExercises.bmiCalculator();
-    //    TasksExercises.fizzBuzz();
-      //  TasksExercises.primeNumbers();
-       // TasksExercises.fibonacci();
-      //  TasksExercises.numDigitsSum();
-      //  TasksExercises.maxText();
-      //  TasksExercises.maxTextVar2();
-        TasksExercises.spaceOccurencePercentage();
+        //  TasksExercises.bmiCalculator();
+        //    TasksExercises.fizzBuzz();
+        //  TasksExercises.primeNumbers();
+        // TasksExercises.fibonacci();
+        //  TasksExercises.numDigitsSum();
+        //  TasksExercises.maxText();
+        //  TasksExercises.maxTextVar2();
+        // TasksExercises.spaceOccurencePercentage();
+        TasksExercises.stutters();
     }
 }

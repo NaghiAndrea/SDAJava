@@ -256,6 +256,37 @@ public class TasksExercises {
         System.out.println("Procentul aparitiei caracterului spatiu: " + (((float)count / (float) text.length()) *100) + "%");
     }
 
+    //   Write an application that "stutters", that is, reads the user's text (type String),
+    //   and prints the given text, in which each word is printed twice.
+    //   For example, for the input: "This is my test" the application should print "This This is is my my test test".
+
+    public static void stutters() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Introduceti textul: ");
+        String text = input.nextLine();
+
+        StringBuilder textTwice = new StringBuilder("");
+        StringBuilder word = new StringBuilder("");
+
+        boolean newWord = false;
+
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) != ' ') {
+                word.append(text.charAt(i));
+            } else newWord = true;
+            if ((newWord == true) || (i == (text.length() - 1))) {
+                textTwice.append(word + " " + word + " ");
+
+                word = new StringBuilder("");
+                newWord = false;
+            }
+        }
+
+        System.out.println(textTwice);
+
+    }
+
 
 }
 
