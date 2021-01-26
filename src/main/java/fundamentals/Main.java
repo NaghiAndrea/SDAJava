@@ -40,6 +40,7 @@ public class Main {
       //  TasksExercises.primeNumbers();
        // TasksExercises.fibonacci();
       //  TasksExercises.numDigitsSum();
-        TasksExercises.maxText();
+      //  TasksExercises.maxText();
+        TasksExercises.maxTextVar2();
     }
 }

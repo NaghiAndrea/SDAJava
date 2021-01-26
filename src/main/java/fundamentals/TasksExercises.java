@@ -183,7 +183,62 @@ public class TasksExercises {
             System.out.println("Cel mai lung cuvant: " + maxCuvant);
     }
 
+    public static void maxTextVar2() {
+        Scanner input = new Scanner(System.in);
 
+        System.out.println("Introduceti textul: ");
+        String text = "";
+        StringBuilder textIntreg = new StringBuilder("");
+
+        int dim = 0;
+        while (!(text.equals("Enough!"))) {
+            text = input.next();
+            if (!(text.equals("Enough!"))) {
+                textIntreg.append(text);
+                textIntreg.append(" ");
+                dim++;
+            }
+        }
+
+        System.out.println("Textul: " + textIntreg);
+
+        StringBuilder[] textArray = new StringBuilder[dim];
+        int[] lengthTextArray = new int[dim];
+        StringBuilder cuvant = new StringBuilder("");
+        boolean cuvantNou = false;
+        int dimLengthText = 0;
+        int charCounter = 0;
+        int max = 0;
+        StringBuilder maxCuvant = new StringBuilder("");
+        for (int i = 0; i < textIntreg.length(); i++) {
+
+            if (textIntreg.charAt(i) != ' ') {
+                cuvant.append(textIntreg.charAt(i));
+                charCounter++;
+            } else cuvantNou = true;
+            if ((cuvantNou == true) || (i == (textIntreg.length() - 1))) {
+                textArray[dimLengthText] = cuvant;
+                lengthTextArray[dimLengthText] = charCounter;
+                if (charCounter > max) {
+                    max = charCounter;
+                    maxCuvant = cuvant;
+                }
+                charCounter = 0;
+                dimLengthText++;
+                cuvant = new StringBuilder("");
+                cuvantNou = false;
+            }
+        }
+        //    System.out.println("Cel mai lung cuvant: " + maxCuvant);
+        if (max == 0) System.out.println("Nu a fost introdus text");
+        else {
+            System.out.println("Cel mai lung cuvant: ");
+            for (int i = 0; i < textArray.length; i++) {
+                if (lengthTextArray[i] == max)
+                    System.out.println(textArray[i]);
+            }
+        }
+    }
 }
 
 
