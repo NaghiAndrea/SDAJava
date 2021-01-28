@@ -1,5 +1,8 @@
 package fundamentals;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class TasksExercises {
@@ -355,6 +358,28 @@ public class TasksExercises {
             }
         }
         System.out.println("The length of the longest increasing subsequence: " + max);
+    }
+
+    // //Write an application that will read from the user the date of your next SDA classes
+    //    and calculate how many days are left to them. Hint: read the date as String and parse
+    //    it to LocalDate. Get the current date using LocalDate.now() method.
+
+    public static void nextSdaClassDate() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Introduceti data pentru urnmatorul curs SDA (in format: dd.MM.yyyy): ");
+        String text = input.nextLine();
+
+
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
+        LocalDate dataCurs = LocalDate.parse(text, dateFormat);
+        System.out.println(dataCurs);
+
+        LocalDate now = LocalDate.now();
+        System.out.println(now);
+
+        Period numarZile = Period.between(now, dataCurs);
+        System.out.println("Mai sunt " + numarZile.getDays() + " zile pana la urmatorul curs SDA.");
     }
 }
 

@@ -46,6 +46,7 @@ public class Main {
         // TasksExercises.stutters();
         // TasksExercises.lowerCaseDistance();
         // TasksExercises.multipleOccureNum();
-        TasksExercises.longestIncrSubseQ();
+       // TasksExercises.longestIncrSubseQ();
+        TasksExercises.nextSdaClassDate();
     }
 }
