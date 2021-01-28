@@ -43,6 +43,7 @@ public class Main {
         //  TasksExercises.maxText();
         //  TasksExercises.maxTextVar2();
         // TasksExercises.spaceOccurencePercentage();
-        TasksExercises.stutters();
+        // TasksExercises.stutters();
+        TasksExercises.lowerCaseDistance();
     }
 }

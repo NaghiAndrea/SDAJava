@@ -99,7 +99,7 @@ public class TasksExercises {
 
         System.out.print("Introduceti indexul dorit: ");
         int num = input.nextInt();
-        int[] myArray = new int[num+1];
+        int[] myArray = new int[num + 1];
 
         for (int i = 0; i < myArray.length; i++) {
             System.out.print("Index: " + i + " : ");
@@ -111,8 +111,8 @@ public class TasksExercises {
                 System.out.println(myArray[i]);
             }
         }
-            System.out.println("\nNumarul Fibonacci la indexul: " + num + " este " + myArray[num]);
-        }
+        System.out.println("\nNumarul Fibonacci la indexul: " + num + " este " + myArray[num]);
+    }
 
 
     //Write an application that gets one positive number (type int) from the user and
@@ -253,7 +253,7 @@ public class TasksExercises {
         }
         System.out.println("Lungime text: " + text.length());
         System.out.println("Numarul de aparitii caracter spatiu: " + count);
-        System.out.println("Procentul aparitiei caracterului spatiu: " + (((float)count / (float) text.length()) *100) + "%");
+        System.out.println("Procentul aparitiei caracterului spatiu: " + (((float) count / (float) text.length()) * 100) + "%");
     }
 
     //   Write an application that "stutters", that is, reads the user's text (type String),
@@ -284,10 +284,24 @@ public class TasksExercises {
         }
 
         System.out.println(textTwice);
-
     }
 
-
+    //Write an application that reads two lowercase letters of the Latin alphabet (type char)
+    // and calculates how many characters is there in the alphabet between given letters.
+    // Hint - use the ASCII code table and treat the characters as int numbers.
+    public static void lowerCaseDistance() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Introduceti 2 caractere lowercase: ");
+        String char1 = input.next();
+        String char2 = input.next();
+        int result = 0;
+        if (((int) char1.charAt(0) - (int) char2.charAt(0)) > 0) {
+            result = (int) char1.charAt(0) - (int) char2.charAt(0) - 1;
+        } else {
+            result = (int) char2.charAt(0) - (int) char1.charAt(0) - 1;
+        }
+        System.out.println(result + " caractere sunt intre litera " + char1.charAt(0) + " si litera " + char2.charAt(0));
+    }
 }
 
 
