@@ -302,6 +302,32 @@ public class TasksExercises {
         }
         System.out.println(result + " caractere sunt intre litera " + char1.charAt(0) + " si litera " + char2.charAt(0));
     }
+
+    //Write an application that reads from the user 10 arbitrarily large numbers
+    // (variables of type int) and prints those that occurred at least twice.
+
+    public static void multipleOccureNum() {
+        Scanner input = new Scanner(System.in);
+        int[] numArray = new int[10];
+        int max = 0;
+        System.out.println("Introduceti 10 numere intregi: ");
+        for (int i = 0; i < 10; i++) {
+            numArray[i] = input.nextInt();
+            if (numArray[i] > max) {
+                max = numArray[i];
+            }
+        }
+        int[] occureArray = new int[max + 1];
+        for (int i = 0; i < numArray.length; i++) {
+            occureArray[numArray[i]]++;
+        }
+        for (int i = 0; i < occureArray.length; i++) {
+            if (occureArray[i] > 1) {
+                System.out.print(i);
+                System.out.println("  " + occureArray[i] + " ori");
+            }
+        }
+    }
 }
 
 
