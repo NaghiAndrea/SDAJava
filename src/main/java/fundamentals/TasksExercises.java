@@ -328,6 +328,34 @@ public class TasksExercises {
             }
         }
     }
+
+    //Write an application that takes 10 numbers from the user (type int) and write the length
+// of the longest such subsequence of these numbers, which is increasing.
+// For example, for the numbers: "1, 3, 8, 4, 2, 5, 6, 11, 13, 7" the program should
+// write "5" as the length of the longest increasing subsequence (underlined in the example).
+
+    public static void longestIncrSubseQ() {
+        Scanner input = new Scanner(System.in);
+        int[] numArray = new int[10];
+        int max = 0;
+        System.out.println("Introduceti 10 numere intregi: ");
+        for (int i = 0; i < 10; i++) {
+            numArray[i] = input.nextInt();
+        }
+
+        for (int i = 0; i < (numArray.length - 1); i++) {
+            int count = 1;
+            int k = i;
+            while ((k < (numArray.length - 1)) && (numArray[k] < numArray[k + 1])) {
+                count++;
+                k++;
+            }
+            if (count > max) {
+                max = count;
+            }
+        }
+        System.out.println("The length of the longest increasing subsequence: " + max);
+    }
 }
 
 
