@@ -400,6 +400,17 @@ public class TasksExercises {
         }
     }
 
+    private static boolean isPrime(int nr) {
+        if (nr == 2) return true;
+        if (nr == 0 || nr == 1 || nr % 2 == 0) return false;
+
+        for (int i = 3; i * i <= nr; i += 2) { //verifica radical nr
+            if (nr % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     private static boolean isPrime4(int nr) {
         boolean isPrimeNo = true;
@@ -412,20 +423,17 @@ public class TasksExercises {
         return isPrimeNo;
     }
 
- // Nem tudtam teljesen megirni
     private static boolean isPrime3(int nr) {
         boolean isPrimeNo = true;
         for (int i = 2; i <= nr / 2; i++) {
             if (nr % i != 0) {
-                continue;
+                continue;  //merge la urmatoarea iteratie in for
             }
-                isPrimeNo = false;
-                break;
-            }
-            return isPrimeNo;
+            isPrimeNo = false;
+            break; //intrerupe for-ul
         }
-
-
+        return isPrimeNo;
+    }
 
 
     private static boolean isPrime2(int nr) {
