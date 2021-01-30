@@ -49,7 +49,8 @@ public class Main {
        // TasksExercises.longestIncrSubseQ();
        // TasksExercises.nextSdaClassDate();
 
-        TasksExercises.printAllPrimeNumbers();
+       // TasksExercises.printAllPrimeNumbers();
        // TasksExercises.fizzBuzz2();
+        TasksExercises.longestWord();
     }
 }

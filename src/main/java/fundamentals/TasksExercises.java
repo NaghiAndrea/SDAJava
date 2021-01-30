@@ -400,17 +400,6 @@ public class TasksExercises {
         }
     }
 
-    private static boolean isPrime(int nr) {
-        if (nr == 2) return true;
-        if (nr == 0 || nr == 1 || nr % 2 == 0) return false;
-
-        for (int i = 3; i * i <= nr; i += 2) { //verifica radical nr
-            if (nr % i == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
 
     private static boolean isPrime4(int nr) {
         boolean isPrimeNo = true;
@@ -423,20 +412,21 @@ public class TasksExercises {
         return isPrimeNo;
     }
 
-  /* Nem tudtam teljesen megirni
+ // Nem tudtam teljesen megirni
     private static boolean isPrime3(int nr) {
         boolean isPrimeNo = true;
         for (int i = 2; i <= nr / 2; i++) {
             if (nr % i != 0) {
-                continue;}
-            else {
-                isPrimeNo = false;
+                continue;
             }
+                isPrimeNo = false;
+                break;
+            }
+            return isPrimeNo;
         }
-        return isPrimeNo;
-    }
 
-   */
+
+
 
     private static boolean isPrime2(int nr) {
         for (int i = 2; i <= nr / 2; i++) {
@@ -481,8 +471,44 @@ public class TasksExercises {
         }
     }
 
-}
+    public static void longestWord() {
+        System.out.println("Type your text: ");
+        Scanner scanner = new Scanner((System.in));
+        String word = "";
+        String longestWord1 = "";
+        while (!word.equals("Enough!")) {
+            if (longestWord1.length() < word.length()) {
+                longestWord1 = word;
+            }
+            word = scanner.next();
+        }
 
+        if (longestWord1.length() == 0) {
+            System.out.println("No text provided");
+            return;     //intrerup executia metodei
+        }
+        System.out.println("The longest word: " + longestWord1);
+    }
+
+    public static void longestWord2() {
+        System.out.println("Type your text: ");
+        Scanner scanner = new Scanner((System.in));
+        String word = "";
+        String longestWord1 = "";
+        do {
+            word = scanner.next();
+            if ((!word.equals("Enough!")) && (longestWord1.length() < word.length())) {
+                longestWord1 = word;
+            }
+        }
+        while (!word.equals("Enough!"));
+        if (longestWord1.length() == 0) {
+            System.out.println("No text provided");
+            return;     //intrerup executia metodei
+        }
+        System.out.println("The longest word: " + longestWord1);
+    }
+}
 
 
 
