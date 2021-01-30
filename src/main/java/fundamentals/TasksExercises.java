@@ -381,7 +381,96 @@ public class TasksExercises {
         Period numarZile = Period.between(now, dataCurs);
         System.out.println("Mai sunt " + numarZile.getDays() + " zile pana la urmatorul curs SDA.");
     }
+
+//Write an application that takes a positive number from the user (type int)
+// and prints all prime numbers greater than 1 and less than the given number.
+
+    public static void printAllPrimeNumbers() {
+        System.out.println("Give me a number: ");
+        Scanner scanner = new Scanner(System.in);
+        int newNumber = scanner.nextInt();
+        if (newNumber <= 1) {
+            System.out.println("The number is not greater than 1");
+            return;  // intrerupe executia metodei - termina metoda
+        }
+        for (int i = 2; i < newNumber; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    private static boolean isPrime(int nr) {
+        boolean isPrimeNo = true;
+        for (int i = 2; i <= nr / 2; i++) {
+            if (nr % i == 0) {
+                isPrimeNo = false;
+                break; //intrerupe for-ul
+            }
+        }
+        return isPrimeNo;
+    }
+
+  /* Nem tudtam teljesen megirni
+    private static boolean isPrime3(int nr) {
+        boolean isPrimeNo = true;
+        for (int i = 2; i <= nr / 2; i++) {
+            if (nr % i != 0) {
+                continue;}
+            else {
+                isPrimeNo = false;
+            }
+        }
+        return isPrimeNo;
+    }
+
+   */
+
+    private static boolean isPrime2(int nr) {
+        for (int i = 2; i <= nr / 2; i++) {
+            if (nr % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean isPrime1(int nr) {
+        for (int i = 2; i < nr; i++) {
+            int rest = nr % i;
+            if (rest == 0) {
+                return false; //se intrerupe executia metodei
+            }
+        }
+        return true;
+    }
+
+    public static void fizzBuzz2() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Introduceti numarul: ");
+        int num = input.nextInt();
+        for (int i = 1; i <= num; i++) {
+            if ((i % 3 == 0) && (i % 7 == 0)) {
+                System.out.println("Fizz buzz");
+                continue;   //intrerupe si se intoarce la urmatoarea valoare i
+                            // break ar fi iesit din for
+            }
+            if (i % 3 == 0) {
+                System.out.println("Fizz");
+                continue;
+            }
+            if (i % 7 == 0) {
+                System.out.println("Buzz");
+                continue;
+            }
+            System.out.println(i);
+            }
+    }
+
 }
+
+
 
 
 

@@ -36,7 +36,7 @@ public class Main {
       */
 
         //  TasksExercises.bmiCalculator();
-        //    TasksExercises.fizzBuzz();
+      TasksExercises.fizzBuzz();
         //  TasksExercises.primeNumbers();
         // TasksExercises.fibonacci();
         //  TasksExercises.numDigitsSum();
@@ -47,6 +47,9 @@ public class Main {
         // TasksExercises.lowerCaseDistance();
         // TasksExercises.multipleOccureNum();
        // TasksExercises.longestIncrSubseQ();
-        TasksExercises.nextSdaClassDate();
+       // TasksExercises.nextSdaClassDate();
+
+        //TasksExercises.printAllPrimeNumbers();
+        TasksExercises.fizzBuzz2();
     }
 }
