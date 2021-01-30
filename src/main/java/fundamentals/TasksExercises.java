@@ -401,6 +401,18 @@ public class TasksExercises {
     }
 
     private static boolean isPrime(int nr) {
+        if (nr == 2) return true;
+        if (nr == 0 || nr == 1 || nr % 2 == 0) return false;
+
+        for (int i = 3; i * i <= nr; i += 2) { //verifica radical nr
+            if (nr % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean isPrime4(int nr) {
         boolean isPrimeNo = true;
         for (int i = 2; i <= nr / 2; i++) {
             if (nr % i == 0) {
@@ -454,7 +466,7 @@ public class TasksExercises {
             if ((i % 3 == 0) && (i % 7 == 0)) {
                 System.out.println("Fizz buzz");
                 continue;   //intrerupe si se intoarce la urmatoarea valoare i
-                            // break ar fi iesit din for
+                // break ar fi iesit din for
             }
             if (i % 3 == 0) {
                 System.out.println("Fizz");
@@ -465,7 +477,8 @@ public class TasksExercises {
                 continue;
             }
             System.out.println(i);
-            }
+
+        }
     }
 
 }
