@@ -381,7 +381,199 @@ public class TasksExercises {
         Period numarZile = Period.between(now, dataCurs);
         System.out.println("Mai sunt " + numarZile.getDays() + " zile pana la urmatorul curs SDA.");
     }
-}
 
+//Write an application that takes a positive number from the user (type int)
+// and prints all prime numbers greater than 1 and less than the given number.
+
+    public static void printAllPrimeNumbers() {
+        System.out.println("Give me a number: ");
+        Scanner scanner = new Scanner(System.in);
+        int newNumber = scanner.nextInt();
+        if (newNumber <= 1) {
+            System.out.println("The number is not greater than 1");
+            return;  // intrerupe executia metodei - termina metoda
+        }
+        for (int i = 2; i < newNumber; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    private static boolean isPrime(int nr) {
+        if (nr == 2) return true;
+        if (nr == 0 || nr == 1 || nr % 2 == 0) return false;
+
+        for (int i = 3; i * i <= nr; i += 2) { //verifica radical nr
+            if (nr % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean isPrime4(int nr) {
+        boolean isPrimeNo = true;
+        for (int i = 2; i <= nr / 2; i++) {
+            if (nr % i == 0) {
+                isPrimeNo = false;
+                break; //intrerupe for-ul
+            }
+        }
+        return isPrimeNo;
+    }
+
+    private static boolean isPrime3(int nr) {
+        boolean isPrimeNo = true;
+        for (int i = 2; i <= nr / 2; i++) {
+            if (nr % i != 0) {
+                continue;  //merge la urmatoarea iteratie in for
+            }
+            isPrimeNo = false;
+            break; //intrerupe for-ul
+        }
+        return isPrimeNo;
+    }
+
+
+    private static boolean isPrime2(int nr) {
+        for (int i = 2; i <= nr / 2; i++) {
+            if (nr % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean isPrime1(int nr) {
+        for (int i = 2; i < nr; i++) {
+            int rest = nr % i;
+            if (rest == 0) {
+                return false; //se intrerupe executia metodei
+            }
+        }
+        return true;
+    }
+
+    public static void fizzBuzz2() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Introduceti numarul: ");
+        int num = input.nextInt();
+        for (int i = 1; i <= num; i++) {
+            if ((i % 3 == 0) && (i % 7 == 0)) {
+                System.out.println("Fizz buzz");
+                continue;   //intrerupe si se intoarce la urmatoarea valoare i
+                // break ar fi iesit din for
+            }
+            if (i % 3 == 0) {
+                System.out.println("Fizz");
+                continue;
+            }
+            if (i % 7 == 0) {
+                System.out.println("Buzz");
+                continue;
+            }
+            System.out.println(i);
+
+        }
+    }
+
+    public static void longestWord() {
+        System.out.println("Type your text: ");
+        Scanner scanner = new Scanner((System.in));
+        String word = "";
+        String longestWord1 = "";
+        while (!word.equals("Enough!")) {
+            if (longestWord1.length() < word.length()) {
+                longestWord1 = word;
+            }
+            word = scanner.next();
+        }
+
+        if (longestWord1.length() == 0) {
+            System.out.println("No text provided");
+            return;     //intrerup executia metodei
+        }
+        System.out.println("The longest word: " + longestWord1);
+    }
+
+    public static void longestWord2() {
+        System.out.println("Type your text: ");
+        Scanner scanner = new Scanner((System.in));
+        String word = "";
+        String longestWord1 = "";
+        do {
+            word = scanner.next();
+            if ((!word.equals("Enough!")) && (longestWord1.length() < word.length())) {
+                longestWord1 = word;
+            }
+        }
+        while (!word.equals("Enough!"));
+        if (longestWord1.length() == 0) {
+            System.out.println("No text provided");
+            return;     //intrerup executia metodei
+        }
+        System.out.println("The longest word: " + longestWord1);
+    }
+
+//Write an application that "stutters", that is, reads the user's text (type String), and prints
+//the given text, in which each word is printed twice.
+//For example, for the input: "This is my test" the application should print "This This is is
+//my my test test".
+
+    public static void stuttersImproved() {
+        System.out.println("Type your text: ");
+        Scanner scanner = new Scanner((System.in));
+
+        String text = scanner.nextLine();
+        String[] wordsArray = text.split(" ");
+
+        System.out.println("Stutters: ");
+
+        for (int i= 0; i < wordsArray.length - 1 ; i++){
+            System.out.print((wordsArray[i] + " " +wordsArray[i] + " "));
+        }
+        System.out.println(wordsArray[wordsArray.length - 1] + " " + wordsArray[wordsArray.length - 1]  );
+
+    }
+
+    public static void testStrings() {
+        String s1 = "abc", s2 = "abc" , s3 = new String("abc");
+        System.out.println(s1 == s2);            //Output: true
+        System.out.println(s1 == s3);            //Output: false
+        System.out.println(s1.equals(s3));       //Output: true
+    }
+
+    public static void testObjects(){
+
+        Dog dog1 = new Dog( "Azorel");
+        dog1.setName("Azorel");
+
+        Dog dog2 = new Dog("Azorel");
+        dog2.setName("Azorel");
+
+        System.out.println(dog1 == dog2);           //Output: false - pointeaza catre alte zone de memorie
+        System.out.println(dog1.equals(dog2));
+                        //Output: false - referintele difera - dog1 si dog2 verifica referintele lor
+                        //Output: true - dupa ce am suprascris metoda equals
+    }
+
+/* inainte sa facem constructorul public Dog (String name)
+    public static void testObjects1(){
+        //facem 2 instante de Dog; La prima instanta sa-i dam numele Azorel
+        Dog dog1 = new Dog();
+        dog1.setName("Azorel");
+
+        Dog dog2 = new Dog();
+        dog2.setName("Azorel");
+
+        System.out.println(dog1 == dog2);           //Output: false - pointeaza catre alte zone de memorie
+        System.out.println(dog1.equals(dog2));      //Output: false
+
+    }
+    */
+
+}
 
 
