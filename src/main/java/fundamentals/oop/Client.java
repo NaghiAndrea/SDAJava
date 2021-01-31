@@ -1,5 +1,7 @@
 package fundamentals.oop;
 
+import java.util.Arrays;
+
 /**
  * Client  which consists of:
  * constructor: with arguments: name and cnp (for initializing the fields and the  bankingAccount array will be
@@ -25,6 +27,16 @@ public class Client {
         return bankAccountArray;
     }
 
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", cnp='" + cnp + '\'' +
+                ", bankAccount=" + bankAccount +
+                ", bankAccountArray=" + Arrays.toString(bankAccountArray) +
+                '}';
+    }
+
     public void setBankAccountArray(BankAccount[] bankAccountArray) {
         this.bankAccountArray = bankAccountArray;
     }
@@ -45,8 +57,8 @@ public class Client {
         this.bankAccount = new BankAccount();
     }
 
-    public String toString() {
-        return "Name = " + this.name + " / CNP = " + this.cnp + " / Bankaccount = " + this.bankAccount;
+    public String toString1() {
+        return "Name = " + this.name + " / CNP = " + this.cnp + " / BankAccount = " + this.bankAccount;
     }
 
     public String getName() {

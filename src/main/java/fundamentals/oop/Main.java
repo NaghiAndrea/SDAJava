@@ -15,21 +15,21 @@ public class Main {
 
 
         Client client = new Client("Larisa", "1233466666", bankAccount);
-        System.out.println(client.toString());
-        System.out.println(client); // afiseaza acelasi lucru
+        System.out.println("1. --- " + client.toString1());
+        System.out.println("2. --- " + client); // afiseaza acelasi lucru cu to  string- dar aici s-a facut overwright
 
         //  client.getBankAccount().setBalance(12);
         client.getBankAccount().addMoney(15);
-        System.out.println(client);
+        System.out.println("3. --- " + client);
         client.getBankAccount().setType("SPENDING");
         client.getBankAccount().addMoney(1);
         client.getBankAccount().addMoney(27);
-        System.out.println(client);
+        System.out.println("4. --- " + client);
         client.getBankAccount().setType("SAVING");
         client.getBankAccount().withdrawMoney(40);
-        System.out.println(client);
+        System.out.println("5. ---- " + client);
         client.getBankAccount().withdrawMoney(15);
-        System.out.println(client);
+        System.out.println("6. --- " + client);
 
 
         System.out.println("Rezultatul convertirii: " + BankAccount.convertMoneyToCurrency(10, "EUR", "USD"));
@@ -42,17 +42,19 @@ public class Main {
         BankAccount bankAccount2 = new BankAccount("SPENDING", "USD;"); //ctrl+d
         BankAccount[] myArray = {bankAccount1,bankAccount2};
         client.setBankAccountArray(myArray);
-        System.out.println(myArray[0]);
-        System.out.println(myArray[1]);
-        System.out.println("Array-ul: " + client.getBankAccountArray()[0]);  //ctrl+click arata metoda
+        System.out.println("7. --- " + myArray[0]);
+        System.out.println("8. --- " + myArray[1]);
+        System.out.println("9. ---- Array-ul: " + client.getBankAccountArray()[0]);  //ctrl+click arata metoda
         //aici trebuie sa returneze un array de BankAccount
-        System.out.println("Array-ul: " + client.getBankAccountArray()[0].getType());
+        System.out.println("10. ---- Array-ul: " + client.getBankAccountArray()[0].getType());
 
 
         BankAccount[] clientBankAccounts = client.getBankAccountArray();
-        System.out.println(clientBankAccounts[0]);
-        System.out.println(client.getBankAccountArray()[0]); //acelasi lucru doar nu am creat inca un obiect intr-o variabila
+        System.out.println("11. --- " + clientBankAccounts[0]);
+        System.out.println("12. --- " + client.getBankAccountArray()[0]); //acelasi lucru doar nu am creat inca un obiect intr-o variabila
         //ca sa pot sa listez
+
+        System.out.println("13. --- Clientul: " + client);
 
 /*
         System.out.println("Input new name: ");
