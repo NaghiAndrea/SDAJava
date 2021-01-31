@@ -516,8 +516,64 @@ public class TasksExercises {
         }
         System.out.println("The longest word: " + longestWord1);
     }
+
+//Write an application that "stutters", that is, reads the user's text (type String), and prints
+//the given text, in which each word is printed twice.
+//For example, for the input: "This is my test" the application should print "This This is is
+//my my test test".
+
+    public static void stuttersImproved() {
+        System.out.println("Type your text: ");
+        Scanner scanner = new Scanner((System.in));
+
+        String text = scanner.nextLine();
+        String[] wordsArray = text.split(" ");
+
+        System.out.println("Stutters: ");
+
+        for (int i= 0; i < wordsArray.length - 1 ; i++){
+            System.out.print((wordsArray[i] + " " +wordsArray[i] + " "));
+        }
+        System.out.println(wordsArray[wordsArray.length - 1] + " " + wordsArray[wordsArray.length - 1]  );
+
+    }
+
+    public static void testStrings() {
+        String s1 = "abc", s2 = "abc" , s3 = new String("abc");
+        System.out.println(s1 == s2);            //Output: true
+        System.out.println(s1 == s3);            //Output: false
+        System.out.println(s1.equals(s3));       //Output: true
+    }
+
+    public static void testObjects(){
+
+        Dog dog1 = new Dog( "Azorel");
+        dog1.setName("Azorel");
+
+        Dog dog2 = new Dog("Azorel");
+        dog2.setName("Azorel");
+
+        System.out.println(dog1 == dog2);           //Output: false - pointeaza catre alte zone de memorie
+        System.out.println(dog1.equals(dog2));
+                        //Output: false - referintele difera - dog1 si dog2 verifica referintele lor
+                        //Output: true - dupa ce am suprascris metoda equals
+    }
+
+/* inainte sa facem constructorul public Dog (String name)
+    public static void testObjects1(){
+        //facem 2 instante de Dog; La prima instanta sa-i dam numele Azorel
+        Dog dog1 = new Dog();
+        dog1.setName("Azorel");
+
+        Dog dog2 = new Dog();
+        dog2.setName("Azorel");
+
+        System.out.println(dog1 == dog2);           //Output: false - pointeaza catre alte zone de memorie
+        System.out.println(dog1.equals(dog2));      //Output: false
+
+    }
+    */
+
 }
-
-
 
 
