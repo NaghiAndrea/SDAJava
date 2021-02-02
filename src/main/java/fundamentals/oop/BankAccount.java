@@ -82,6 +82,11 @@ public class BankAccount {
                 '}';
     }
 
+/* facut de noi:
+    public String toString() {
+        return "Account type: " + this.type + " / Currency: " + this.currency + " / Balance: " + this.balance;
+    }
+*/
 
     public String getType() {
         return type;
