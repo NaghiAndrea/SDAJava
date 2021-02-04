@@ -29,7 +29,7 @@ public class BankAccount {
     private String currency;
 
     public static final double USD_TO_EUR = 0.85;  //caps cu _ intre cuvinte - la constante
-    public static final double EUR_TO_USD = 1.23;
+    public static final double EUR_TO_USD = 1.25;
 
     public BankAccount(String type, String currency) {
         this.type = type;

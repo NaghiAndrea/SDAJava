@@ -33,7 +33,7 @@ public class Client {
                 "name='" + name + '\'' +
                 ", cnp='" + cnp + '\'' +
                 ", bankAccount=" + bankAccount +
-                ", bankAccountArray=" + Arrays.toString(bankAccountArray) +
+                "\n bankAccountArray=" + Arrays.toString(bankAccountArray) +
                 '}';
     }
 
@@ -85,5 +85,46 @@ public class Client {
         this.bankAccount = bankAccount;
     }
 
+    //addBankAccount( takes one argument, bankAccount obj - if there already exists a banking account of the same type
+    // * in the array an error message is printed)
+    public void addBankAccount(BankAccount bankAccount) {
+        int index = 0;
+        for (int i = 0; i < this.bankAccountArray.length; i++) {
+            if (this.bankAccountArray[i].getType().equals(bankAccount.getType())) {
+                System.out.println("Error: This type of banking account already exists.");
+                return;
+            }
+            index = i;
+        }
+        this.bankAccountArray[index] = bankAccount;
+    }
 
+    // getSavingAccount( returns the bankAccount obj of type SAVING from the array, if there isn’t a saving account a null
+    // * object is return along with printing an error message)
+    public BankAccount getSavingAccount() {
+        for (int i = 0; i < this.bankAccountArray.length; i++) {
+            if (this.bankAccountArray[i].getType().equals("SAVING")) {
+                return bankAccountArray[i];
+            }
+        }
+        System.out.println("Error: There isn't a saving account.");
+        return null;
+    }
+
+    // removeAccountByType (takes a string argument which represents the type of the account to be removed from the array
+    // * and prints a success message if the operations succeeded or error message if not - where the account did not exist
+    // * in the array)
+    public void removeAccountByType(String accountType) {
+        boolean removed = false;
+        for (int i = 0; i < this.bankAccountArray.length; i++) {
+            if (this.bankAccountArray[i].getType().equals(accountType)) {
+                this.bankAccountArray[i] = new BankAccount("", "");
+                System.out.println("Account removed succesfully.");
+                removed = true;
+            }
+        }
+        if (removed == false) {
+            System.out.println("Error: This type of banking account does not exist.");
+        }
+    }
 }
