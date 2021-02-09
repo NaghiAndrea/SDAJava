@@ -55,7 +55,8 @@ public class ArrayExercises {
         }
         System.out.println("The array doesn't contain the value.");
     }
-//* Write a Java program to remove a specific element from an array.
+
+    //* Write a Java program to remove a specific element from an array.
     public static String[] removeElement(String[] myArray, String toRemove) {
         int n = 0;
         for (int i = 0; i < myArray.length; i++) {
@@ -72,29 +73,37 @@ public class ArrayExercises {
         }
         return newArray;
     }
-/*
-     public static String[] removeElement2(String[] myArray, String toRemove) {
+
+    public static String[] removeElementImproved(String[] myArray, String toRemove) {
 
         for (int i = 0; i < myArray.length; i++) {
-            if (myArray[i].equals(null)) break;
+            if (myArray[i] == null) break;
             if (myArray[i].equals(toRemove)) {
-
+                if (myArray.length == 1) {
+                    myArray[i] = null;
+                    break;
+                }
                 int j = i;
-                while (j < myArray.length-1) {
+                i--;
+                while (j < myArray.length) {
+                    if (myArray[j + 1] == null) {
+                        myArray[j] = null;
+                        break;
+                    }
                     myArray[j] = myArray[j + 1];
                     j++;
-                    if ((j+1== myArray.length) || (myArray[j+1] == null)) {
+                    if (j + 1 == myArray.length) {
                         myArray[j] = null;
                         break;
                     }
                 }
             }
         }
-       return myArray;
+        return myArray;
     }
-*/
 
-//* Write a Java program to find the max number (harder: the second max number) in an array of integers.
+
+    //* Write a Java program to find the max number (harder: the second max number) in an array of integers.
     public static int secondMaxNo(int[] myArray) {
         int max1 = 0, max2 = 0;
         if (myArray.length < 2) {
@@ -114,7 +123,7 @@ public class ArrayExercises {
         return max2;
     }
 
-// Write a Java program to find the duplicate values of an array of string values.
+    // Write a Java program to find the duplicate values of an array of string values.
     public static void findDuplicateValues(String[] myArray) {
         for (int i = 0; i < myArray.length - 1; i++) {
             for (int k = i + 1; k < myArray.length; k++) {
@@ -133,18 +142,18 @@ public class ArrayExercises {
         for (int i = 0; i < myArray.length; i++) {
             boolean inNewArray = false;
             for (int j = 0; j < index; j++) {
-                        if (newArray[j].equals(myArray[i])) {
-                            countArray[j]++;
-                            inNewArray = true;
-                            break;
-                        }
-                    }
-            if (inNewArray == false) {
-                      newArray[index] = myArray[i];
-                      countArray[index]++;
-                      index++;
-                    }
+                if (newArray[j].equals(myArray[i])) {
+                    countArray[j]++;
+                    inNewArray = true;
+                    break;
                 }
+            }
+            if (!inNewArray) {
+                newArray[index] = myArray[i];
+                countArray[index]++;
+                index++;
+            }
+        }
 
         boolean foundDuplicates = false;
         System.out.println("Duplicatele: ");

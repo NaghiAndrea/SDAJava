@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         /*
         int[] myArray = {2, 3, 5 , 7, -7, 5 , 8 , -5};
         ArrayExercises.maxProductOfTwoInt(myArray);
@@ -15,7 +16,10 @@ public class Main {
         String[] myStrArray = text.split(" ");
         ArrayExercises.specificValInStringArray(myStrArray);
 */
-        String[] myStringArray =  {"casa" , "masa" , "calculator", "casa"};
+        String[] myStringArray = {"casa","casa", "masa", "masa","calculator", "casa","casa"};
+        //String[] myStringArray = {"masa"};
+
+        //String[] myStringArray =  {"casa" , "masa" , "calculator", "casa"};
      //   ArrayExercises.specificValInStringArray(myStringArray);
 
         System.out.print("Enter the element you want to remove: ");
@@ -23,7 +27,7 @@ public class Main {
 
         String[] newStringArray;
         if (Arrays.asList(myStringArray).contains(toRemove)){
-            newStringArray = ArrayExercises.removeElement(myStringArray,toRemove);
+            newStringArray = ArrayExercises.removeElementImproved(myStringArray,toRemove);
             System.out.print("New array: ");
             for (int i = 0; i < newStringArray.length; i++) {
                 System.out.print(newStringArray[i] + " ");
@@ -48,4 +52,5 @@ public class Main {
 
     }
     */
-}
+    }
+
