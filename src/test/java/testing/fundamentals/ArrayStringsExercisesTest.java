@@ -19,7 +19,7 @@ public class ArrayStringsExercisesTest {
         assertEquals(expectedResult,actualResult);
     }
     @Test
-    void shoulAppendLength(){
+    void shouldAppendLength(){
         //Given
         String inputText = "Characters";
         String expectedResult = "Characters10";
@@ -78,5 +78,94 @@ public class ArrayStringsExercisesTest {
         int actualResult = arrayStringsExercises.findPosOffMinElement(inputArray); //am creat cu Alt+Enter metoda - sugereaza Intellij
         //Then
         assertEquals(expectedResult,actualResult);
+    }
+    @Test
+    void shouldReturnTextWithLengthReadedToCharA(){
+        //Given
+          String inputString = "character";
+          String expectedString = "cha3ra5cter";
+        ArrayStringsExercises arrayStringsExercises = new ArrayStringsExercises();
+        //When
+        String actualString = arrayStringsExercises.insertLengthAfterLetterA(inputString);
+        //Then
+        assertEquals(expectedString, actualString);
+    }
+
+    @Test
+    void shouldReturn0ForEmptyString(){
+        //Given
+        String inputString = "";
+        String expectedString = "0";
+        ArrayStringsExercises arrayStringsExercises = new ArrayStringsExercises();
+        //When
+        String actualString = arrayStringsExercises.insertLengthAfterLetterA(inputString);
+        //Then
+        assertEquals(expectedString, actualString);
+    }
+
+    @Test
+    void shouldAppendLengthWithZNo(){
+        //Given
+        String inputString = "fzjhgzzzjzhzlz";
+        String expectedString = "fzjhgzzzjzhzlz7";
+        ArrayStringsExercises arrayStringsExercises = new ArrayStringsExercises();
+        //When
+        String actualString = arrayStringsExercises.appendsLengthWithNumberOfZ(inputString);
+        //Then
+        assertEquals(expectedString, actualString);
+        assertThat(actualString).endsWith("7");
+    }
+
+    @Test
+    void shouldAppendLengthWith0Z(){
+        //Given
+        String inputString = "";
+        String expectedString = "0";
+        ArrayStringsExercises arrayStringsExercises = new ArrayStringsExercises();
+        //When
+        String actualString = arrayStringsExercises.appendsLengthWithNumberOfZ(inputString);
+        //Then
+        assertEquals(expectedString, actualString);
+        assertThat(actualString).endsWith("0");
+    }
+
+    @Test
+    void shouldSpecifyArrayElemsFitsInInterval(){
+        //Given
+        int[] inputArray = {44,5,62,9,3};
+        int intervalMin = 44;
+        int intervalMax = 46;
+        String expectedString = "The array contains elements that fit inside the number interval.";
+        ArrayStringsExercises arrayStringsExercises = new ArrayStringsExercises();
+        //When
+        String actualString = arrayStringsExercises.arrayElementsFitsInInterval(inputArray,intervalMin,intervalMax);
+        //Then
+        assertEquals(expectedString, actualString);
+    }
+    @Test
+    void shouldSpecifyArrayElemsNotFitsInInterval(){
+        //Given
+        int[] inputArray = {44,5,62,9,3};
+        int intervalMin = 50;
+        int intervalMax = 60;
+        String expectedString = "The array does not contain elements that fit inside the number interval.";
+        ArrayStringsExercises arrayStringsExercises = new ArrayStringsExercises();
+        //When
+        String actualString = arrayStringsExercises.arrayElementsFitsInInterval(inputArray,intervalMin,intervalMax);
+        //Then
+        assertEquals(expectedString, actualString);
+    }
+    @Test
+    void shouldSpecifyArrayIsEmpty(){
+        //Given
+        int[] inputArray = {};
+        int intervalMin = 50;
+        int intervalMax = 60;
+        String expectedString = "The array is empty.";
+        ArrayStringsExercises arrayStringsExercises = new ArrayStringsExercises();
+        //When
+        String actualString = arrayStringsExercises.arrayElementsFitsInInterval(inputArray,intervalMin,intervalMax);
+        //Then
+        assertEquals(expectedString, actualString);
     }
 }

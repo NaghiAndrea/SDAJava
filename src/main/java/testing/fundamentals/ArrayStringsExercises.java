@@ -27,8 +27,17 @@ public class ArrayStringsExercises {
 
     //Ads in a text, after every “a” letter the length of the text read until then.
     public String insertLengthAfterLetterA(String text) {
-        return "";
+        if (text.equals("")) return "0";
+        String newString = "";
+        for (int i = 0; i < text.length(); i++) {
+            newString += text.charAt(i);
+            if (text.charAt(i) == 'a') {
+                newString += (i + 1);
+            }
+        }
+        return newString;
     }
+
 
     //
     public String appendsLength(String text) {
@@ -46,13 +55,13 @@ public class ArrayStringsExercises {
 
     //Finds the position of the min element from the array (if they are multiple elements, the last position, if there aren’t => return -1)
     public int findPosOffMinElement(int[] inputArray) {
-      //  int min = Integer.MAX_VALUE; //pt.ca sigur exista un numar mai mic decat acesta din array
+        //  int min = Integer.MAX_VALUE; //pt.ca sigur exista un numar mai mic decat acesta din array
         if (inputArray.length == 0) {
             return -1;
         }
         int min = inputArray[0];
         int index = 0;
-        for (int i = 1; i < inputArray.length; i++){
+        for (int i = 1; i < inputArray.length; i++) {
             if (inputArray[i] <= min) {
                 min = inputArray[i];
                 index = i;
@@ -61,4 +70,23 @@ public class ArrayStringsExercises {
         return index;
     }
 
-   }
+    public String appendsLengthWithNumberOfZ(String text) {
+        if (text.equals("")) return "0";
+        int count = 0;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == 'z') {
+                count++;
+            }
+        }
+        return text + count;  //daca adaugam la string tipul int-lui devine automat string
+    }
+
+    public String arrayElementsFitsInInterval(int[] inputArray, int intervalMin, int intervalMax) {
+        if (inputArray.length == 0) return "The array is empty.";
+        for (int i = 0; i < inputArray.length; i++) {
+            if (inputArray[i] >= intervalMin && inputArray[i] <= intervalMax)
+                return "The array contains elements that fit inside the number interval.";
+        }
+        return "The array does not contain elements that fit inside the number interval.";
+    }
+}
