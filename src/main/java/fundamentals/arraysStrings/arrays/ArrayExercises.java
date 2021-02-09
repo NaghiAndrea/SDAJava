@@ -72,6 +72,27 @@ public class ArrayExercises {
         }
         return newArray;
     }
+/*
+     public static String[] removeElement2(String[] myArray, String toRemove) {
+
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i].equals(null)) break;
+            if (myArray[i].equals(toRemove)) {
+
+                int j = i;
+                while (j < myArray.length-1) {
+                    myArray[j] = myArray[j + 1];
+                    j++;
+                    if ((j+1== myArray.length) || (myArray[j+1] == null)) {
+                        myArray[j] = null;
+                        break;
+                    }
+                }
+            }
+        }
+       return myArray;
+    }
+*/
 
 //* Write a Java program to find the max number (harder: the second max number) in an array of integers.
     public static int secondMaxNo(int[] myArray) {

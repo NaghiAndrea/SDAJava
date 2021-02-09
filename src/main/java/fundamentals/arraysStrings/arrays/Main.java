@@ -14,7 +14,7 @@ public class Main {
         String text = scanner.nextLine();
         String[] myStrArray = text.split(" ");
         ArrayExercises.specificValInStringArray(myStrArray);
-
+*/
         String[] myStringArray =  {"casa" , "masa" , "calculator", "casa"};
      //   ArrayExercises.specificValInStringArray(myStringArray);
 
@@ -31,14 +31,14 @@ public class Main {
         }
         else System.out.println("The specified element is not in the array");
     }
-
+/*
       //==================================================================
         int[] myArray2 = {8, 2, 3, 5, 7, -7, 5, 19, -5, 15, 17, 16, 18};
         //int[] myArray2 = {3, 2};
         if (ArrayExercises.secondMaxNo(myArray2) != 0)
             System.out.println("The second max number in array: " + ArrayExercises.secondMaxNo(myArray2));
     }
-*/
+
        String[] myEStringArray = {"masa", "input", "casa", "calculator", "casa", "calc","masa"};
        // String[] myEStringArray = {"masa", "input", "casa", "calculator", "calc"};
        //String[] myEStringArray = {"masa"};
@@ -47,4 +47,5 @@ public class Main {
         ArrayExercises.findDuplicateValues2(myEStringArray);
 
     }
+    */
 }
